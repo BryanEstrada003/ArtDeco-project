@@ -7,6 +7,8 @@
 	<meta name="author" content="Untree.co">
 	<link rel="shortcut icon" href="images/watercolor_icon.png">
 
+	<script src="js/main.js" defer></script>
+
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap4" />
 
@@ -410,60 +412,15 @@
 								<input type="email" id="email" name="email" class="form-control"
 									placeholder="Ingresa tu email" />
 							</div>
+							
+							
+
 							<div class="col-auto">
 								<button type="submit" class="btn btn-primary">
 									<span class="fa fa-paper-plane"></span>
 								</button>
 							</div>
 						</form>
-
-						<script>
-							window.addEventListener("DOMContentLoaded", loaded);
-
-							constformulario = document.getElementById("formulario");
-							constformulario.addEventListener("submit", (event) => {
-								event.preventDefault();
-
-								nombre = document.getElementById("nombre");
-								email = document.getElementById("email");
-
-								if (nombre.value.length == 0) {
-									alert("Nombre requerido")
-									nombre.focus()
-									return;
-								}
-
-								if (email.value.length == 0) {
-									alert("Email requerido")
-									email.focus()
-									return;
-								}
-
-								constnombre = document.getElementById("nombre").value;
-								constemail = document.getElementById("email").value;
-
-								constdatos = {
-									nombre: constnombre,
-									email: constemail,
-								};
-
-								fetch(
-									"https://lavender-59c67-default-rtdb.firebaseio.com/lavender.json",
-									{
-										method: "POST",
-										body: JSON.stringify(constdatos),
-										headers: {
-											"Content-Type": "application/json",
-										},
-									}
-								)
-									.then((respuesta) => respuesta.json())
-									.then((datos) => {
-										console.log(datos);
-									})
-									.catch((error) => console.error(error));
-							});
-						</script>
 					</div>
 				</div>
 			</div>
