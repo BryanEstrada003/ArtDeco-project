@@ -11,6 +11,7 @@ let loaded = (eventLoaded) => {
 
         nombre = document.getElementById("nombre");
         email = document.getElementById("email");
+        kit = document.getElementById("kit");
 
         if (nombre.value.length == 0) {
             alert("Nombre requerido")
@@ -24,12 +25,16 @@ let loaded = (eventLoaded) => {
             return;
         }
 
-        constnombre = document.getElementById("nombre").value;
-        constemail = document.getElementById("email").value;
+        if (kit.value.length == 0) {
+            alert("Kit requerido")
+            kit.focus()
+            return;
+        }
 
         constdatos = {
-            nombre: constnombre,
-            email: constemail,
+            nombre: nombre.value,
+            email: email.value,
+            kit: kit.value,
         };
 
         fetch(
@@ -45,9 +50,49 @@ let loaded = (eventLoaded) => {
             .then((respuesta) => respuesta.json())
             .then((datos) => {
                 console.log(datos);
+                alert("Datos enviados correctamente");
+                formulario.reset();
             })
             .catch((error) => console.error(error));
     });
+
+
 };
 
+let loadVotes = async() => {
+    const url = "https://lavender-59c67-default-rtdb.firebaseio.com/lavender.json";
+    const respuesta = await fetch(url);
+    if (!respuesta.ok) {
+        console.error("Error:", respuesta.status);
+        return;
+    }
+    const datos = await respuesta.json();
+    let votesMap = new Map();
+
+
+    for (const key in datos) {
+        let vote = datos[key].kit;
+        if (votesMap.has(vote)) {
+            votesMap.set(vote, votesMap.get(vote) + 1);
+        } else {
+            votesMap.set(vote, 1);
+        }
+    }
+
+    let maxVotes = 0;
+    let maxVotesKit = "";
+    votesMap.forEach((value, key) => {
+        if (value >= maxVotes) {
+            maxVotes = value;
+            maxVotesKit = key;
+        }
+    });
+
+    return maxVotesKit;
+}
+
 window.addEventListener("DOMContentLoaded", loaded);
+window.addEventListener("DOMContentLoaded", async () => {
+    const maxVotesKit = await loadVotes();
+    console.log(maxVotesKit);
+});
