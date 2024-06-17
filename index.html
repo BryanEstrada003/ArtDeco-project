@@ -28,12 +28,31 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.html"><span>A</span>rt<span>D</span>eco</a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsArtDeco"
-				aria-controls="navbarsArtDeco" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-		</div>
 
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Inicio</a>
+					</li>
+					<li><a class="nav-link" href="#kits">Nosotros</a></li>
+					<li><a class="nav-link" href="#">Cursos</a></li>
+					<li><a class="nav-link" href="#">Contacto</a></li>
+				</ul>
+
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li>
+						<a class="nav-link" onclick="userAlert()"><img src="images/user.svg" /></a>
+					</li>
+					<li>
+						<a class="nav-link" onclick="shopAlert2()"><img src="images/cart.svg" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 	<!-- End Header/Navigation -->
 
@@ -44,14 +63,17 @@
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
 						<h1>Cursos y Talleres de <span clsas="d-block">Acuarelas</span></h1>
-						<p class="mb-4">Aprende y perfecciona tus habilidades en acuarelas con nuestros cursos y talleres especializados. ¡Inscríbete ahora!</p>
-						<p><a href="courses.html" class="btn btn-secondary me-2">Ver Cursos</a><a href="kits.html"
-								class="btn btn-white-outline">Ver Kits</a></p>
+						<p class="mb-4">Aprende y perfecciona tus habilidades en acuarelas con nuestros cursos y
+							talleres especializados. ¡Inscríbete ahora!</p>
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<div class="hero-img-wrap">
-						<!-- Aquí colocar imagen de acuarela -->
+					<div class="hero-img-wrap" style="
+						display: flex;
+						justify-content: center;
+					">
+						<img src="images/flores.png" alt="Everyday" style="
+							width: 70%;">
 					</div>
 				</div>
 			</div>
@@ -66,16 +88,18 @@
 
 				<!-- Start Column 1 -->
 				<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-					<h2 class="mb-4 section-title">Kits de Materiales</h2>
-					<p class="mb-4">Encuentra los mejores kits de materiales para tus proyectos de acuarela. Alta calidad garantizada.</p>
-					<p><a href="kits.html" class="btn">Explorar</a></p>
+					<h2 class="mb-4 section-title" id="kits">Kits de Materiales</h2>
+					<p class="mb-4">Encuentra los mejores kits de materiales para tus proyectos de acuarela. Alta
+						calidad garantizada.</p>
 				</div>
 				<!-- End Column 1 -->
 
 				<!-- Start Column 2 -->
 				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-					<a class="product-item" href="cart.html">
-						<!-- Aquí colocar imagen del producto 1 -->
+					<a class="product-item">
+						<img src="images/basico.png" alt="kit basico" style="
+							width: 32.5%;
+						" class="img-fluid product-thumbnail">
 						<h3 class="product-title">Kit Básico de Acuarelas</h3>
 						<strong class="product-price">$30.00</strong>
 					</a>
@@ -85,7 +109,9 @@
 				<!-- Start Column 3 -->
 				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 					<a class="product-item" href="cart.html">
-						<!-- Aquí colocar imagen del producto 2 -->
+						<img src="images/avanzado.jpg" alt="kit basico" style="
+							width: 70%;
+						" class="img-fluid product-thumbnail">
 						<h3 class="product-title">Kit Avanzado de Acuarelas</h3>
 						<strong class="product-price">$50.00</strong>
 					</a>
@@ -95,7 +121,9 @@
 				<!-- Start Column 4 -->
 				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 					<a class="product-item" href="cart.html">
-						<!-- Aquí colocar imagen del producto 3 -->
+						<img src="images/profesional.jpg" alt="kit basico" style="
+							width: 70%;
+						" class="img-fluid product-thumbnail">
 						<h3 class="product-title">Kit Profesional de Acuarelas</h3>
 						<strong class="product-price">$70.00</strong>
 					</a>
@@ -104,73 +132,10 @@
 
 			</div>
 			<h2 class="mb-4 section-title">Kits más consultado</h2>
-			
+
 		</div>
 	</div>
 	<!-- End Product Section -->
-
-	<!-- Start Why Choose Us Section -->
-	<div class="why-choose-section">
-		<div class="container">
-			<div class="row justify-content-between">
-				<div class="col-lg-6">
-					<h2 class="section-title">¿Por qué elegirnos?</h2>
-					<p>Ofrecemos cursos y talleres de acuarelas impartidos por artistas profesionales. Además, nuestros kits de materiales están seleccionados para garantizar la mejor calidad en tus proyectos.</p>
-
-					<div class="row my-5">
-						<div class="col-6 col-md-6">
-							<div class="feature">
-								<div class="icon">
-									<img src="images/truck.svg" alt="Envío rápido" class="imf-fluid">
-								</div>
-								<h3>Envío rápido &amp; gratis</h3>
-								<p>Recibe tus materiales en la comodidad de tu hogar sin costo adicional.</p>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6">
-							<div class="feature">
-								<div class="icon">
-									<img src="images/bag.svg" alt="Fácil de comprar" class="imf-fluid">
-								</div>
-								<h3>Fácil de comprar</h3>
-								<p>Compra de manera fácil y rápida a través de nuestra plataforma.</p>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6">
-							<div class="feature">
-								<div class="icon">
-									<img src="images/support.svg" alt="Soporte 24/7" class="imf-fluid">
-								</div>
-								<h3>Soporte 24/7</h3>
-								<p>Estamos disponibles para ayudarte en cualquier momento.</p>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6">
-							<div class="feature">
-								<div class="icon">
-									<img src="images/return.svg" alt="Devoluciones sin complicaciones" class="imf-fluid">
-								</div>
-								<h3>Devoluciones sin complicaciones</h3>
-								<p>Política de devoluciones sencilla y sin problemas.</p>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="col-lg-5">
-					<div class="img-wrap">
-						<!-- Aquí colocar imagen de acuarela -->
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- End Why Choose Us Section -->
 
 	<!-- Start We Help Section -->
 	<div class="we-help-section">
@@ -178,14 +143,15 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-7 mb-5 mb-lg-0">
 					<div class="imgs-grid">
-						<div class="grid grid-1"><img src="images/img-grid-1.jpg" alt="Untree.co"></div>
-						<div class="grid grid-2"><img src="images/img-grid-2.jpg" alt="Untree.co"></div>
-						<div class="grid grid-3"><img src="images/img-grid-3.jpg" alt="Untree.co"></div>
+						<div class="grid grid-1"><img src="images/Everyday.png" alt="Untree.co"></div>
+						<div class="grid grid-2"><img src="images/watercolor.jpeg" alt="Untree.co"></div>
+						<div class="grid grid-3"><img src="images/principal.jpeg" alt="Untree.co"></div>
 					</div>
 				</div>
 				<div class="col-lg-5 ps-lg-5">
 					<h2 class="section-title mb-4">Te ayudamos a crear arte con acuarelas</h2>
-					<p>Nuestros cursos y talleres están diseñados para ayudarte a mejorar tus habilidades en el arte de la acuarela.</p>
+					<p>Nuestros cursos y talleres están diseñados para ayudarte a mejorar tus habilidades en el arte de
+						la acuarela.</p>
 
 					<ul class="list-unstyled custom-list my-4">
 						<li>Cursos para todos los niveles</li>
@@ -199,130 +165,6 @@
 		</div>
 	</div>
 	<!-- End We Help Section -->
-
-	<!-- Start Popular Product -->
-	<div class="popular-product">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-					<div class="product-item-sm d-flex">
-						<div class="thumbnail">
-							<!-- Aquí colocar imagen del producto 1 -->
-						</div>
-						<div class="pt-3">
-							<h3>Kit Básico de Acuarelas</h3>
-							<p>Todo lo que necesitas para empezar en el mundo de las acuarelas.</p>
-							<p><a href="#">Leer más</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-					<div class="product-item-sm d-flex">
-						<div class="thumbnail">
-							<!-- Aquí colocar imagen del producto 2 -->
-						</div>
-						<div class="pt-3">
-							<h3>Kit Avanzado de Acuarelas</h3>
-							<p>Mejora tus habilidades con materiales de calidad profesional.</p>
-							<p><a href="#">Leer más</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
-					<div class="product-item-sm d-flex">
-						<div class="thumbnail">
-							<!-- Aquí colocar imagen del producto 3 -->
-						</div>
-						<div class="pt-3">
-							<h3>Kit Profesional de Acuarelas</h3>
-							<p>Para aquellos que buscan la excelencia en sus proyectos de arte.</p>
-							<p><a href="#">Leer más</a></p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<!-- End Popular Product -->
-	<script src="js/main.js"></script>formulario
-	<!-- Start Testimonial Slider -->
-	<div class="testimonial-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 mx-auto text-center">
-					<h2 class="section-title">Testimonios</h2>
-				</div>
-			</div>
-
-			<div class="row justify-content-center">
-				<div class="col-lg-12">
-					<div class="testimonial-slider-wrap text-center">
-
-						<div id="testimonial-nav">
-							<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-							<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
-						</div>
-
-						<div class="testimonial-slider">
-
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-
-										<div class="testimonial-block text-center">
-											<blockquote class="mb-5">
-												<p>&ldquo;Los cursos de ArtDeco me han ayudado a mejorar mis habilidades en acuarelas. ¡Altamente recomendado!&rdquo;</p>
-											</blockquote>
-
-											<div class="author-info">
-												<div class="author-pic">
-													<!-- Aquí colocar imagen de la persona 1 -->
-												</div>
-												<h3 class="font-weight-bold">María García</h3>
-												<span class="position d-block mb-3">Artista Profesional</span>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-
-										<div class="testimonial-block text-center">
-											<blockquote class="mb-5">
-												<p>&ldquo;Los kits de materiales son de excelente calidad y a buen precio. Estoy muy satisfecha con mi compra.&rdquo;</p>
-											</blockquote>
-
-											<div class="author-info">
-												<div class="author-pic">
-													<!-- Aquí colocar imagen de la persona 2 -->
-												</div>
-												<h3 class="font-weight-bold">Juan Pérez</h3>
-												<span class="position d-block mb-3">Hobbyista</span>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Testimonial Slider -->
 
 	<!-- Start Blog Section -->
 	<div class="blog-section">
@@ -344,7 +186,8 @@
 						<div class="post-content-entry">
 							<h3><a href="#">Consejos para principiantes en acuarelas</a></h3>
 							<div class="meta">
-								<span>por <a href="#">Laura Martínez</a></span> <span>en <a href="#">Ene 20, 2024</a></span>
+								<span>por <a href="#">Laura Martínez</a></span> <span>en <a href="#">Ene 20,
+										2024</a></span>
 							</div>
 						</div>
 					</div>
@@ -356,7 +199,8 @@
 						<div class="post-content-entry">
 							<h3><a href="#">Cómo elegir los mejores materiales para acuarelas</a></h3>
 							<div class="meta">
-								<span>por <a href="#">Carlos López</a></span> <span>en <a href="#">Ene 18, 2024</a></span>
+								<span>por <a href="#">Carlos López</a></span> <span>en <a href="#">Ene 18,
+										2024</a></span>
 							</div>
 						</div>
 					</div>
@@ -382,29 +226,25 @@
 	<!-- Start Footer Section -->
 	<footer class="footer-section">
 		<div class="container relative">
-
-			<div class="sofa-img">
-				<!-- Aquí colocar imagen de acuarela -->
-			</div>
-
-			<div class="row">
-				<div class="col-lg-8">
+			<div class="row" style="display: flex;">
+				<div style="display: flex;">
 					<div class="subscription-form">
 						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
-									alt="Image" class="img-fluid"></span><span>Consulta sobre los kits de acuarelas que prefieras</span></h3>
+									alt="Image" class="img-fluid"></span><span>Consulta sobre los kits de acuarelas que
+								prefieras</span></h3>
 
-						<form class="row g-3" id="">
+						<form class="col g-3" id="">
 							<div class="col-auto">
 								<input type="text" id="nombre" name="nombre" class="form-control"
-									placeholder="Ingresa tu nombre" />
+									placeholder="Ingresa tu nombre">
 							</div>
 							<div class="col-auto">
 								<input type="email" id="email" name="email" class="form-control"
-									placeholder="Ingresa tu email" />
+									placeholder="Ingresa tu email">
 							</div>
 							<div class="col-auto">
-								<select class="form-control" id="kit" name="kit" required>
-									<option value=""selected disabled>Selecciona tu kit</option>
+								<select class="form-control" id="kit" name="kit" required="">
+									<option value="" selected="" disabled="">Selecciona tu kit</option>
 									<option value="basico">Kit básico</option>
 									<option value="avanzado">Kit avanzado</option>
 									<option value="profesional">Kit profesional</option>
@@ -419,67 +259,41 @@
 							</div>
 						</form>
 					</div>
-				</div>
-			</div>
-
-			<div class="row g-5 mb-5">
-				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">ArtDeco<span>.</span></a></div>
-					<p class="mb-4">Nuestra misión es ofrecer los mejores cursos y materiales para todos los amantes del arte de la acuarela.</p>
-
-					<ul class="list-unstyled custom-social">
-						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-					</ul>
-				</div>
-
-				<div class="col-lg-8">
-					<div class="row links-wrap">
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Sobre Nosotros</a></li>
-								<li><a href="#">Servicios</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contáctanos</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Soporte</a></li>
-								<li><a href="#">Base de Conocimientos</a></li>
-								<li><a href="#">Chat en Vivo</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Trabajos</a></li>
-								<li><a href="#">Nuestro Equipo</a></li>
-								<li><a href="#">Liderazgo</a></li>
-								<li><a href="#">Política de Privacidad</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="#">Kit Básico de Acuarelas</a></li>
-								<li><a href="#">Kit Avanzado de Acuarelas</a></li>
-								<li><a href="#">Kit Profesional de Acuarelas</a></li>
-							</ul>
-						</div>
+					<div style="
+						display: flex;
+						justify-content: right;
+					">
+						<img src="images/flowers.jpg" alt="Everyday" style="
+							width: 70%;">
 					</div>
 				</div>
 
+
+			</div>
+
+			<div class="row g-5 mb-5">
+				<div class="footer-logo-wrap"><a href="#" class="footer-logo">ArtDeco<span>.</span></a></div>
+				<p style="
+					margin: 0;
+				">Nuestra misión es ofrecer los mejores cursos y materiales para todos los amantes del
+					arte de la acuarela.</p>
+
+				<ul class="list-unstyled custom-social" style="
+					margin: 0;
+				">
+					<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+					<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+					<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+					<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+				</ul>
 			</div>
 
 			<div class="border-top copyright">
 				<div class="row pt-4">
 					<div class="col-lg-6">
 						<p class="mb-2 text-center text-lg-start">Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>. Todos los derechos reservados. &mdash;
+							<script>document.write(new Date().getFullYear());</script>. Todos los derechos reservados.
+							&mdash;
 							Diseñado con amor por <a href="https://untree.co">Untree.co</a> Distribuido por <a
 								href="https://themewagon.com">ThemeWagon</a>
 							<!-- License information: https://untree.co/license/ -->
