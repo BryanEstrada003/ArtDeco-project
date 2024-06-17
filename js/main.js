@@ -93,7 +93,7 @@ async function rakingKits() {
         let template = `
                 <a class="col product-item" style="padding:0% !important;"> 
                     <img src="images/${i+1}.png" alt="${kit}" class="img-fluid product-thumbnail" style="
-							width: 90%;
+							width: 50%;
 						" >
                     <h2 class="mb-4">${places[i]}</h2>
                     <p><strong>Kit</strong>: ${kit}</p>

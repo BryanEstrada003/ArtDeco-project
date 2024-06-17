@@ -42,7 +42,7 @@ a.more {
 }
 .custom-navbar .navbar-brand > span {
     opacity: .8;
-    color: #4753af;
+    color: #a34191;
 }
 .custom-navbar .navbar-toggler {
   border-color: transparent;
@@ -275,7 +275,6 @@ a.more {
   content: "";
   width: 255px;
   height: 217px;
-  background-image: url("../images/dots-green.svg");
   background-size: contain;
   background-repeat: no-repeat;
   transform: translate(-40%, -40%);
