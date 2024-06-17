@@ -59,7 +59,10 @@ let loaded = (eventLoaded) => {
 
 };
 
-let loadVotes = async() => {
+
+
+
+async function rakingKits() {
     const url = "https://lavender-59c67-default-rtdb.firebaseio.com/lavender.json";
     const respuesta = await fetch(url);
     if (!respuesta.ok) {
@@ -79,20 +82,29 @@ let loadVotes = async() => {
         }
     }
 
-    let maxVotes = 0;
-    let maxVotesKit = "";
-    votesMap.forEach((value, key) => {
-        if (value >= maxVotes) {
-            maxVotes = value;
-            maxVotesKit = key;
-        }
-    });
-
-    return maxVotesKit;
+    // Convertir el Map a un Array y ordenarlo en orden descendente por votos
+    let sortedVotes = Array.from(votesMap.entries()).sort((a, b) => b[1] - a[1]);
+    console.log(sortedVotes);
+    // Generar el HTML para cada elemento y agregarlo a la página
+    document.getElementById("get").innerHTML = '';
+    const places = ["Primer lugar", "Segundo lugar", "Tercer lugar"];
+    for (let i = 0; i < sortedVotes.length; i++) {
+        let [kit, votes] = sortedVotes[i];
+        let template = `
+                <a class="col product-item" style="padding:0% !important;"> 
+                    <img src="images/${i+1}.png" alt="${kit}" class="img-fluid product-thumbnail" style="
+							width: 90%;
+						" >
+                    <h2 class="mb-4">${places[i]}</h2>
+                    <p><strong>Kit</strong>: ${kit}</p>
+                    <p><strong>Votos</strong>: ${votes}</p>
+                </a>
+                    
+                
+        `;
+        document.getElementById("get").innerHTML += template;
+    }
 }
-
+rakingKits();
 window.addEventListener("DOMContentLoaded", loaded);
-window.addEventListener("DOMContentLoaded", async () => {
-    const maxVotesKit = await loadVotes();
-    console.log(maxVotesKit);
-});
+
